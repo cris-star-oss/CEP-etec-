@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title color="primary">
+      <b>Busca CEP</b>
+      <ion-icon name="search" color="dark"></ion-icon>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<br /><br />
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="floating" color="dark">Digite o CEP</ion-label>
+    <ion-input [(ngModel)]="cep"></ion-input>
+  </ion-item>
+  <br />
+  <br />
+  <ion-button expand="block" (click)="LocalizarCEP()" color="dark"
+    ><b>Buscar</b></ion-button
+  >
+
+  <br /><br />
+  <ion-label *ngIf="dadosCEP" color="dark"
+    ><b>Logradouro: {{ dadosCEP.logradouro }}</b></ion-label
+  ><br />
+  <br />
+  <ion-label *ngIf="dadosCEP" color="secondary"
+    ><b>Bairro: {{ dadosCEP.bairro }}</b></ion-label
+  ><br />
+  <br />
+  <ion-label *ngIf="dadosCEP" color="dark"
+    ><b>Cidade: {{ dadosCEP.localidade }}</b></ion-label
+  ><br />
+  <br />
+  <ion-label *ngIf="dadosCEP" color="tertiary"
+    ><b>Estado: {{ dadosCEP.uf }}</b></ion-label
+  >
+</ion-content>
